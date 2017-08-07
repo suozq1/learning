@@ -24,7 +24,11 @@ public class JdbcRDDTest {
 		}
 	}
 
-	public static class User{
+	public static class User implements Serializable{
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
 		private Integer id;
 		private String name;
 		private Integer age;
@@ -88,9 +92,13 @@ public class JdbcRDDTest {
 	public static void main(String[] args) {
 		SparkConf conf=new SparkConf().setMaster("local").setAppName("Jdbc");
 		SparkContext sc = new SparkContext(conf);
-		String sql="select * from user";
+		String sql="select id,name,age from test.user where ? <=id and id <=?";
 		JdbcRDD<User> jdbcRdd=new JdbcRDD<User>(sc,new ConnectionFactory(), sql, 1, 3, 2, new MapRow(), ClassManifestFactory.fromClass(User.class));
-		System.out.println(jdbcRdd.collect().toString());
+		System.out.println(jdbcRdd.count());
+		for(Object o:jdbcRdd.collectPartitions()){
+			User[] oo=(User[]) o;
+			System.out.println(oo[0]);
+		}
 		
 	}
 }
