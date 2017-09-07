@@ -59,6 +59,18 @@
     </dependency>
     
   </dependencies>
+  <profiles>
+     <profile>
+        <id>dev</id>
+     
+     </profile>
+     <profile>
+     
+     
+     </profile>
+     
+  
+  </profiles>
   <build>  
        <plugins>  
            <plugin>  
@@ -66,5 +78,5 @@
                <artifactId>spring-boot-maven-plugin</artifactId>  
            </plugin>  
        </plugins>  
-    </build>  
+  </build>  
 </project>
