@@ -26,8 +26,8 @@ public class SpringbootController {
 	@RequestMapping("/view")
 	public String viewTest(ModelMap map,String name){
 		map.put("name",name);
-		User user=userService.getUserByName(name).get(0);
-		map.put("user",user);
+		//User user=userService.getUserByName(name).get(0);
+		//map.put("user",user);
 		return "home";
 	}
 	@ResponseBody

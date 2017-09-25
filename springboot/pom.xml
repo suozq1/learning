@@ -59,13 +59,18 @@
     </dependency>
     
   </dependencies>
+  
   <profiles>
      <profile>
         <id>dev</id>
-     
+        <properties>
+           <jdbc.url>jdbc:mysql://localhost:3306/match</jdbc.url>
+           <jdbc-username>root</jdbc-username>
+           <jdbc-password>root</jdbc-password>
+        </properties>
      </profile>
      <profile>
-     
+        <id></id>
      
      </profile>
      
