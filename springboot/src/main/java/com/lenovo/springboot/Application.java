@@ -21,7 +21,7 @@ public class Application extends SpringBootServletInitializer {
         return application.sources(Application.class);
     }
 
-    @Bean
+    /*@Bean
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
         return args -> {
             System.out.println("Let's inspect the beans provided by Spring Boot:");
@@ -29,6 +29,6 @@ public class Application extends SpringBootServletInitializer {
             Arrays.sort(beanNames);
             Arrays.asList(beanNames).forEach(System.out::println);
         };
-    }
+    }*/
 
 }
