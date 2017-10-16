@@ -3,4 +3,31 @@
   <groupId>com.suo</groupId>
   <artifactId>activemq-demo</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>1.5.7.RELEASE</version>
+  </parent>
+  <dependencies>
+	 <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-jms</artifactId>  
+        </dependency>  
+    <dependency>
+	   <groupId>org.springframework.boot</groupId>
+	   <artifactId>spring-boot-starter-activemq</artifactId>
+	</dependency>
+	<dependency>  
+        <groupId>org.apache.activemq</groupId>  
+        <artifactId>activemq-pool</artifactId>  
+    </dependency> 
+  </dependencies>
+  <build>  
+        <plugins>  
+            <plugin>  
+                <groupId>org.springframework.boot</groupId>  
+                <artifactId>spring-boot-maven-plugin</artifactId>  
+            </plugin>  
+        </plugins>  
+    </build>  
 </project>
