@@ -1,7 +1,6 @@
 package com.suozq.spark.sql;
 
 import org.apache.spark.SparkConf;
-import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.sql.api.java.JavaSchemaRDD;
 import org.apache.spark.sql.hive.api.java.JavaHiveContext;
