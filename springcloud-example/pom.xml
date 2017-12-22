@@ -4,11 +4,12 @@
   <groupId>com.suo</groupId>
   <artifactId>springcloud-example</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
+  <packaging>pom</packaging>
   <name>springcloud-example</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version>1.8</java.version>
   </properties>
   <parent>
      <groupId>org.springframework.boot</groupId>
@@ -26,16 +27,18 @@
         </dependency>
     </dependencies>
   </dependencyManagement>
-	<dependencies>
-	    <dependency>
-	        <groupId>org.springframework.cloud</groupId>
-	        <artifactId>spring-cloud-starter-config</artifactId>
-	    </dependency>
-	    <dependency>
-	        <groupId>org.springframework.cloud</groupId>
-	        <artifactId>spring-cloud-starter-eureka</artifactId>
-	    </dependency>
-	</dependencies>
-
+	
+   <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
  
+  
+   <modules>
+   	<module>eureka</module>
+   </modules>
 </project>
