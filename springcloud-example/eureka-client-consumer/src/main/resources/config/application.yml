@@ -1,11 +1,9 @@
-spring:
-  profiles:
-    active: dev
 server:
-  port: 8761
+  port: 8763
+spring:
+  application:
+    name: eureka-consumer
 eureka:
   client:
-    registerWithEureka: false
-    fetchRegistry: false
     serviceUrl:
-      defaultZone: http://127.0.0.1:${server.port}/
+      defaultZone: http://127.0.0.1:8761/eureka
