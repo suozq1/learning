@@ -7,10 +7,9 @@
     <artifactId>onsite</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>test-server</artifactId>
-  <name>test-server</name>
+  <artifactId>user-server</artifactId>
+  <name>user-server</name>
   <url>http://maven.apache.org</url>
-  <packaging>jar</packaging>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
@@ -41,6 +40,5 @@
     	<artifactId>common</artifactId>
     	<version>0.0.1-SNAPSHOT</version>
     </dependency>
-    
   </dependencies>
 </project>

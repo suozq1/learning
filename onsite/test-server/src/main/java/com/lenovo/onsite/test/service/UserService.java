@@ -5,7 +5,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.lenovo.onsite.common.dto.UserDTO;
-@FeignClient(value = "user-server")
+import com.lenovo.onsite.test.service.impl.UserServiceImpl;
+@FeignClient(value = "user-server",fallback=UserServiceImpl.class)
 public interface UserService {
 	
 	@RequestMapping(value = "/user/{name}")

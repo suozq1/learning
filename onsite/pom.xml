@@ -27,6 +27,27 @@
         </dependency>
     </dependencies>
   </dependencyManagement>
+  <dependencies>
+     <!--开发工具  -->
+     <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-devtools</artifactId>
+        <optional>true</optional><!--修改自动重启  -->
+     </dependency>
+     
+     <!--主要执行shutdown -->
+     <dependency>
+		  <groupId>org.springframework.boot</groupId>
+		  <artifactId>spring-boot-starter-actuator</artifactId>
+	 </dependency>
+	 
+	 <!--消息 -->
+	 <dependency>
+         <groupId>org.springframework.cloud</groupId>
+         <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+     </dependency>
+  
+  </dependencies>
 	
    <build>
         <plugins>
@@ -44,5 +65,6 @@
     <module>config</module>
     <module>test-server</module>
     <module>common</module>
+    <module>user-server</module>
   </modules>
 </project>
