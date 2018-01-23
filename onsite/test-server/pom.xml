@@ -42,5 +42,17 @@
     	<version>0.0.1-SNAPSHOT</version>
     </dependency>
     
+     <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+    </dependency>
+    
+     <!--开发工具  -->
+     <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-devtools</artifactId>
+        <optional>true</optional><!--修改自动重启  -->
+     </dependency>
+    
   </dependencies>
 </project>
