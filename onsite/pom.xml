@@ -60,6 +60,7 @@
     <module>test-server</module>
     <module>common</module>
     <module>user-server</module>
+    <module>sleuth</module>
   </modules>
   
   <repositories>

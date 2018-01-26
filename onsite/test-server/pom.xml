@@ -47,12 +47,11 @@
         <artifactId>spring-cloud-starter-bus-amqp</artifactId>
     </dependency>
     
-     <!--开发工具  -->
      <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-devtools</artifactId>
-        <optional>true</optional><!--修改自动重启  -->
+         <groupId>org.springframework.cloud</groupId>
+         <artifactId>spring-cloud-starter-zipkin</artifactId>
      </dependency>
+    
     
   </dependencies>
 </project>
