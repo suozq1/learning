@@ -8,8 +8,8 @@ public class StringReplaceAllTest {
 		s=s.replaceAll("b", null);//因为没有匹配到所以正常运行没有报错
 		System.out.println(s);
 		//s=s.replaceAll("a", null);//有匹配，报错
-		
-		
+		s="/^sdf$/";
+		System.out.println(s.matches("/\\^.+\\$/"));
 		
 	}
 }
