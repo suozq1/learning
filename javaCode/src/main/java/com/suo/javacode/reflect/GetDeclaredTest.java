@@ -3,7 +3,7 @@ package com.suo.javacode.reflect;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
-public class getDeclaredTest {
+public class GetDeclaredTest {
 	public static class Shape{
 		private String a;
 		@SuppressWarnings("unused")
@@ -30,24 +30,24 @@ public class getDeclaredTest {
 	}
 	public static void main(String[] args) throws IllegalArgumentException, IllegalAccessException, NoSuchFieldException, SecurityException {
 		Shape shape = new Shape();
-		System.out.println("父类getMethods");
+		System.out.println("鐖剁被getMethods");
 		for(Method m : shape.getClass().getMethods()) {
 			System.out.println(m.getName());
 		}
-		System.out.println("-------------------\n父类getDeclaredMethods");
+		System.out.println("-------------------\n鐖剁被getDeclaredMethods");
 		for(Method m : shape.getClass().getDeclaredMethods()) {
 			System.out.println(m.getName());
 		}
-		System.out.println("---------华丽的分割线------------\n子类getMethods");
+		System.out.println("---------鍗庝附鐨勫垎鍓茬嚎------------\n瀛愮被getMethods");
 		shape = new Circle();
 		for(Method m : shape.getClass().getMethods()) {
 			System.out.println(m.getName());
 		}
-		System.out.println("-------------------\n子类getDeclaredMethods");
+		System.out.println("-------------------\n瀛愮被getDeclaredMethods");
 		for(Method m : shape.getClass().getDeclaredMethods()) {
 			System.out.println(m.getName());
 		}
-		System.out.println("-------------------\n设置父类私有字段");
+		System.out.println("-------------------\n璁剧疆鐖剁被绉佹湁瀛楁");
 		Shape s=new Shape();
 		Field f=shape.getClass().getSuperclass().getDeclaredField("a");
 		f.setAccessible(true);

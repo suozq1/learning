@@ -5,9 +5,9 @@ public class StringReplaceAllTest {
 		String s="sdfsdfasdfsdfasdfadf";
 		s=s.replaceAll("(sdf.*)(a)", "$2");
 		System.out.println(s);
-		s=s.replaceAll("b", null);//ÒòÎªÃ»ÓĞÆ¥Åäµ½ËùÒÔÕı³£ÔËĞĞÃ»ÓĞ±¨´í
+		s=s.replaceAll("b", null);//å› ä¸ºæ²¡æœ‰åŒ¹é…åˆ°æ‰€ä»¥æ­£å¸¸è¿è¡Œæ²¡æœ‰æŠ¥é”™
 		System.out.println(s);
-		//s=s.replaceAll("a", null);//ÓĞÆ¥Åä£¬±¨´í
+		//s=s.replaceAll("a", null);//æœ‰åŒ¹é…ï¼ŒæŠ¥é”™
 		s="/^sdf$/";
 		System.out.println(s.matches("/\\^.+\\$/"));
 		
