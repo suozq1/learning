@@ -17,13 +17,36 @@
 	</ul>
 	<a :class="{href:'isActive'}"  :href="href" v-on:click.stop="onclick($event)">{{href}}</a>
 	<button v-on:click="{dbClick:onclick($event)}">测试v-on</button>
+	<br>
+	<input type="text" v-model.lazy="lazy">{{lazy}} <br>
+	<input type="text" v-model.trim="lazy"><pre>{{lazy}}</pre> <br>
+	number: <input type="text" v-model.number="lazy"><pre>{{lazy}}</pre> <br>
+	<input type="text" v-model.number.lazy.trim="lazy"><pre>{{lazy}}</pre> <br>
+
+	<hr>
+
+	<input type="radio" v-model="gender" value="1" >男
+	<input type="radio" v-model="gender" value="0" >女
+	<input type="text" v-model="gender">
+
+	<hr>
+	<input type="checkbox" v-model="gain" value="1" >A
+	<input type="checkbox" v-model="gain" value="0" >B
+	<input type="checkbox" v-model="gain" value="-1" >C
+	<input type="text" v-model="gain">
+	<hr>
+	<select v-model="gain" multiple>
+		<option value="1">A</option>
+		<option value="0">B</option>
+		<option value="-1">C</option>
+	</select>
 </div>
 </body>
 <script type="text/javascript" src="./js/framwork/vue.js"></script>
 <script type="text/javascript" src="./js/index.js"></script>
 <script type="text/javascript">
 var app = new Vue({
-	el:'div',
+	el:'div#app',
 	data:{
 		title:'测试标题',
 		students:[{
@@ -33,8 +56,10 @@ var app = new Vue({
 			name:'yuan',
 			age:'12'
 		}],
-		href:"http://www.baidu.com"
-		
+		href:"http://www.baidu.com",
+		lazy:"惰性加载",
+		gender:1,
+		gain:[1]
 	},
 	methods:{
 		onclick:function (e) {
