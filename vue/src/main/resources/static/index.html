@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>{{title}}</title>
+</head>
+<body>
+<div id="app">
+	<ul>
+	  <li v-for="student in students">
+		  <input type="text"  v-model="student.name" >
+		  <span v-show="student.name" >我的名字：{{student.name}}</span>
+		  <br>
+		  <input type="text"  v-model="student.age" >
+		  <span v-if="student.age==12" >我的名字：{{student.age}}</span>
+	  </li>
+	</ul>
+	<a :class="{href:'isActive'}"  :href="href" v-on:click.stop="onclick($event)">{{href}}</a>
+	<button v-on:click="{dbClick:onclick($event)}">测试v-on</button>
+</div>
+</body>
+<script type="text/javascript" src="./js/framwork/vue.js"></script>
+<script type="text/javascript" src="./js/index.js"></script>
+<script type="text/javascript">
+var app = new Vue({
+	el:'div',
+	data:{
+		title:'测试标题',
+		students:[{
+			name:'suo',
+			age:'12'
+		},{
+			name:'yuan',
+			age:'12'
+		}],
+		href:"http://www.baidu.com"
+		
+	},
+	methods:{
+		onclick:function (e) {
+			e.stopPropagation();
+			console.log("click");
+		}
+	}
+});
+
+</script>
+</html>
