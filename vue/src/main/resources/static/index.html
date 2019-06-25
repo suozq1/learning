@@ -11,8 +11,8 @@
 		  <input type="text"  v-model="student.name" >
 		  <span v-show="student.name" >我的名字：{{student.name}}</span>
 		  <br>
-		  <input type="text"  v-model="student.age" >
-		  <span v-if="student.age==12" >我的名字：{{student.age}}</span>
+		  <input type="text"  v-model.number="student.age" >
+		  <span v-if="student.age==12" >我的年龄：{{student.age}}</span>
 	  </li>
 	</ul>
 	<a :class="{href:'isActive'}"  :href="href" v-on:click.stop="onclick($event)">{{href}}</a>
@@ -31,8 +31,11 @@
 
 	<hr>
 	<input type="checkbox" v-model="gain" value="1" >A
+	<span>
 	<input type="checkbox" v-model="gain" value="0" >B
+	</span>
 	<input type="checkbox" v-model="gain" value="-1" >C
+
 	<input type="text" v-model="gain">
 	<hr>
 	<select v-model="gain" multiple>
@@ -40,31 +43,89 @@
 		<option value="0">B</option>
 		<option value="-1">C</option>
 	</select>
+    组件
+	<hr>
+ 	<suo :a="href"></suo>
+ 	<suo></suo>
+	<yuan></yuan>
+
+	<hr>
 </div>
+<template id="suo-template">
+	<div >
+		<a href="#" v-on:click.prevent="onclick" >suosdf</a>
+		<button>ceshi</button>
+	</div>
+</template>
 </body>
 <script type="text/javascript" src="./js/framwork/vue.js"></script>
 <script type="text/javascript" src="./js/index.js"></script>
 <script type="text/javascript">
+	Vue.component('yuan',{
+		template:'<a href="#" v-on:click="onclick" >yuan</a>',
+		methods: {
+			onclick:function () {
+				alert("components.onclick");
+			}
+		}
+	});
 var app = new Vue({
 	el:'div#app',
 	data:{
 		title:'测试标题',
 		students:[{
 			name:'suo',
-			age:'12'
+			age:12
 		},{
 			name:'yuan',
-			age:'12'
+			age:12
 		}],
 		href:"http://www.baidu.com",
 		lazy:"惰性加载",
 		gender:1,
 		gain:[1]
+
 	},
 	methods:{
 		onclick:function (e) {
 			e.stopPropagation();
 			console.log("click");
+		},
+		oncc:function () {
+			alert("Globe oncc");
+		}
+	},
+	computed:{
+		sum:function () {
+			console.log("----sum ");
+			var age = 0;
+			for (var s in this.students){
+				age+=this.students[s].age;
+			}
+			return age;
+		},
+		abs:function () {
+			console.log("---abs");
+		},
+		sum2:function () {
+			console.log("---sum2");
+			return this.sum+this.abs;
+		}
+	},
+	components:{
+		suo:{
+			template:'#suo-template',
+			props:['a','b'],
+			data:function () {
+				return {
+					aa:5
+				};
+			},
+			methods: {
+				onclick:function () {
+					alert(this.a);
+				}
+			}
 		}
 	}
 });
