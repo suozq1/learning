@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import com.suo.javacode.nio.Consumer;
+
 class Book {
     private String bookName;
 
@@ -59,6 +61,7 @@ public class BookShelf implements MyIteratable<Book> {
 	}
     
     public static void main(String[] args) {
+    	Consumer c = new Consumer();
 		BookShelf bookShelf = new BookShelf(new Book("ºìÂ¥ÃÎ"),new Book("Î÷ÓÎ¼Ç"));
 		Iterator<Book> bookIterator = bookShelf.iterator();
 		while(bookIterator.hasNext()) {
