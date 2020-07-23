@@ -1,7 +1,6 @@
 package com.suo.book.algorithm.datastructure;
 
 import java.util.Arrays;
-import java.util.List;
 
 public class BasicBinaryTree<T> {
 	
@@ -48,7 +47,7 @@ public class BasicBinaryTree<T> {
     
 	public BasicBinaryTree(Iterable<T> list) {
 		list.forEach(x->{
-			BinaryTreeNode<T> b=new BinaryTreeNode<T>();
+			BinaryTreeNode<T> b=new BinaryTreeNode<T>(x);
 		});
 	}
 }

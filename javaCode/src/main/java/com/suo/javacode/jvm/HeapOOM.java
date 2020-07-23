@@ -7,7 +7,7 @@ public class HeapOOM {
     public static class OOMObject{
     	
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) {//10分钟左右OOM
 		List<OOMObject> list = new LinkedList<>();
 		for(;;) {
 			list.add(new OOMObject());
