@@ -7,9 +7,17 @@ package com.suo.javacode.concurrent;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
 
 public class ExecutorServiceTest {
-	static ExecutorService ca = Executors.newCachedThreadPool();
+	static ExecutorService cached = Executors.newCachedThreadPool();
+	static ExecutorService fixed = Executors.newFixedThreadPool(10);
+	static ScheduledExecutorService schedul = Executors.newScheduledThreadPool(10);
+	static ExecutorService single = Executors.newSingleThreadExecutor();
 	
+	static ExecutorService s =Executors.newWorkStealingPool();
+	
+	public static void main(String[] args) {
+	}
 	
 }
