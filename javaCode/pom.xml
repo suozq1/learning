@@ -7,4 +7,19 @@
   <properties>
   	<java.version>1.8</java.version>
   </properties>
+  <dependencies>
+<!--   	<dependency>
+	    <groupId>org.apache.shardingsphere</groupId>
+	    <artifactId>shardingsphere-jdbc-core</artifactId>
+	    <version>4.1.1</version>
+	</dependency> -->
+  
+  </dependencies>
+  <repositories>
+  	 <repository>
+        <id>mvn</id>
+        <url>https://mvnrepository.com</url>
+     </repository>
+  
+  </repositories>
 </project>
